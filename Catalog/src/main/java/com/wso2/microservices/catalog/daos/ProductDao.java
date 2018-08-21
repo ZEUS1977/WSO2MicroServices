@@ -8,10 +8,8 @@ import com.wso2.microservices.catalog.entities.Product;
 
 import java.util.List;
 
-public interface ProductDao extends JpaRepository<Product, String>{
+public interface ProductDao extends JpaRepository<Product, Integer>{
 
     @Query(value = "SELECT * FROM PRODUCT WHERE CATEGORY=:category", nativeQuery = true)
     List<Product> findAllProductByCategory(@Param("category")String category);
-    
-    Product findById(Integer id);
 }

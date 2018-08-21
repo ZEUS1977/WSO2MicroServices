@@ -149,5 +149,13 @@ public class RestController {
     	return ResponseEntity.status(HttpStatus.OK).body(new JsonResponseBody(HttpStatus.OK.value(), products));
     }
     
+    @RequestMapping(value = "/product/{id}", method = GET)
+    public ResponseEntity<JsonResponseBody> findAllProductById(@PathVariable Integer id){
+    	
+    	Product product  = productService.getProductById(id);
+    	
+    	return ResponseEntity.status(HttpStatus.OK).body(new JsonResponseBody(HttpStatus.OK.value(), product));
+    }
+    
     
 }
