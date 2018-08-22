@@ -150,7 +150,7 @@ public class RestController {
     }
     
     @RequestMapping(value = "/product/{id}", method = GET)
-    public ResponseEntity<JsonResponseBody> findAllProductById(@PathVariable Integer id){
+    public ResponseEntity<JsonResponseBody> findProductById(@PathVariable Integer id){
     	
     	Product product  = productService.getProductById(id);
     	
