@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,7 @@ import javax.validation.constraints.NotNull;
 public class Account {
 
     //String ID, String FK_USER, Double TOTAL
-    @Id
+    @Id @GeneratedValue
     @Column(name="ID")
     @Getter @Setter
     private Integer id;

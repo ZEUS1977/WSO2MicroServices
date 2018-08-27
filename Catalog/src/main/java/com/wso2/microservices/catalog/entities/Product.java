@@ -2,6 +2,7 @@ package com.wso2.microservices.catalog.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,7 @@ import lombok.Setter;
 public class Product {
 	
 
-    @Id                               //JPA id of the table
+    @Id @GeneratedValue                              //JPA id of the table
     @Column(name="ID")                //JPA (if column name is different from variable name)
     @Getter @Setter                   //Lombok annotations
     private Integer id;
