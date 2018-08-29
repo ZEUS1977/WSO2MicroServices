@@ -14,10 +14,13 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -54,6 +57,9 @@ public class User {
     @NotEmpty @NotBlank @NotNull      //JSR-303 Validation
     @Getter @Setter                   //Lombok annotations
     private String type;
+    
+    @OneToMany
+    private List<Account> accounts;
 
 
 

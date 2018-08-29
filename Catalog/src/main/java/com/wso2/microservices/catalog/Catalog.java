@@ -52,19 +52,24 @@ public class Catalog implements CommandLineRunner{
 		String encryptedPwd = encryptionUtils.encrypt("wso2");
 		System.out.println("Ecripted pwd into DB: " + encryptedPwd);
 		log.info("Ecripted pwd into DB: " + encryptedPwd);
-		userDao.save(new User(1,"RGNLSN87H13D761R", "Alessandro Argentieri", encryptedPwd, "user"));
+		
+		User user1 = new User(1,"RGNLSN87H13D761R", "Alessandro Argentieri", encryptedPwd, "user",null);
+		userDao.save(user1);
+		encryptedPwd = encryptionUtils.encrypt("wso2");
+		
+		User user2 = new User(2,"FRNFBA85M08D761M", "Fabio Fiorenza", encryptedPwd, "user", null);
+		userDao.save(user2);
 
 		encryptedPwd = encryptionUtils.encrypt("wso2");
-		userDao.save(new User(2,"FRNFBA85M08D761M", "Fabio Fiorenza", encryptedPwd, "user"));
+		
+		User user3 = new User(3,"DSTLCU89R52D761R", "Lucia Distante", encryptedPwd, "user", null);
+		userDao.save(user3);
 
-		encryptedPwd = encryptionUtils.encrypt("wso2");
-		userDao.save(new User(3,"DSTLCU89R52D761R", "Lucia Distante", encryptedPwd, "user"));
-
-		accountDao.save(new Account(1, 1));
-		accountDao.save(new Account(2, 1));
-		accountDao.save(new Account(3, 2));
-		accountDao.save(new Account(4, 3));
-		accountDao.save(new Account(5, 3));
+		accountDao.save(new Account(1, user1));
+		accountDao.save(new Account(2, user1));
+		accountDao.save(new Account(3, user2));
+		accountDao.save(new Account(4, user3));
+		accountDao.save(new Account(5, user3));
 
 		productDao.save(new Product(1, "Product1", "Product Number 1",  "A", 111.00));
 		productDao.save(new Product(2, "Product2", "Product Number 2",  "A",222.00));
