@@ -100,7 +100,7 @@ public class RestController {
 
 
     @CrossOrigin
-    @RequestMapping(value = "/login", method = POST)
+    @RequestMapping(value = "/login", method = GET)
     public ResponseEntity<JsonResponseBody> loginUser(@RequestParam(value ="id") Integer id, @RequestParam(value="password") String pwd){
         //check if user exists in DB -> if exists generate JWT and send back to client
         try {
