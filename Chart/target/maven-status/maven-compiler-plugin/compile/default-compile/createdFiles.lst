@@ -1,0 +1,11 @@
+com\wso2\microservices\catalog\controllers\RestController$JsonResponseBody.class
+com\wso2\microservices\chart\Chart.class
+com\wso2\microservices\catalog\daos\ChartDao.class
+com\wso2\microservices\catalog\entities\Chart.class
+com\wso2\microservices\catalog\services\ChartService.class
+com\wso2\microservices\catalog\utils\JwtUtils.class
+com\wso2\microservices\catalog\services\ChartServiceImpl.class
+com\wso2\microservices\catalog\utils\UserNotLoggedException.class
+com\wso2\microservices\catalog\entities\ProductId.class
+com\wso2\microservices\catalog\controllers\RestController.class
+com\wso2\microservices\catalog\utils\EncryptionUtils.class

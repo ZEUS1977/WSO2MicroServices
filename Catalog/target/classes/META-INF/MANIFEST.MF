@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: AccountMicroservice
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: pburagina
+Built-By: pierg
 Implementation-Vendor-Id: com.wso2.microservices.productcatalog
-Build-Jdk: 1.8.0_171
+Build-Jdk: 1.8.0_181
 Implementation-URL: http://projects.spring.io/spring-boot/ProductCatal
  og/
 Created-By: Maven Integration for Eclipse

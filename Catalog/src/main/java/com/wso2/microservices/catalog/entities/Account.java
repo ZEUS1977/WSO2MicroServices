@@ -1,36 +1,51 @@
 package com.wso2.microservices.catalog.entities;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="account")
-@AllArgsConstructor @NoArgsConstructor
 public class Account {
+	
+    public Account() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	public Account(Integer id, User fkUser) {
+		super();
+		this.id = id;
+		this.fkUser = fkUser;
+	}
     //String ID, String FK_USER, Double TOTAL
     @Id @GeneratedValue
     @Column(name="ID")
-    @Getter @Setter
     private Integer id;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public User getFkUser() {
+		return fkUser;
+	}
+
+	public void setFkUser(User fkUser) {
+		this.fkUser = fkUser;
+	}
+	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="OWNER")
     private User fkUser;
 }

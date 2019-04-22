@@ -10,39 +10,84 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@AllArgsConstructor @NoArgsConstructor   //Lombok annotations
 @Entity                                  //JPA defines an Entity
 @Table(name = "PRODUCT")                   //JPA (if table name in the DB differs from Class Name)
 public class Product {
 	
 
-    @Id @GeneratedValue                              //JPA id of the table
+    public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+    
+	public Product(Integer id, String name, String description, String category, Double price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.category = category;
+		this.price = price;
+	}
+	@Id @GeneratedValue                              //JPA id of the table
     @Column(name="ID")                //JPA (if column name is different from variable name)
-    @Getter @Setter                   //Lombok annotations
     private Integer id;
                              
     @Column(name="NAME")                //JPA (if column name is different from variable name)
     @NotEmpty @NotBlank @NotNull      //JSR-303 Validation
-    @Getter @Setter                   //Lombok annotations
     private String name;
     
     @Column(name="DESCRIPTION")                //JPA (if column name is different from variable name)
     @NotEmpty @NotBlank @NotNull      //JSR-303 Validation
-    @Getter @Setter                   //Lombok annotations
     private String description;
 
     @Column(name="CATEGORY")                //JPA (if column name is different from variable name)
     @NotEmpty @NotBlank @NotNull      //JSR-303 Validation
-    @Getter @Setter                   //Lombok annotations
     private String category;
     
     @Column(name="PRICE")
-    @Getter @Setter
     @NotNull
     private Double price;
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
 }
