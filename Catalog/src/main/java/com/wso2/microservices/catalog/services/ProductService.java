@@ -2,7 +2,6 @@ package com.wso2.microservices.catalog.services;
 
 import java.util.List;
 
-import com.wso2.microservices.catalog.entities.Account;
 import com.wso2.microservices.catalog.entities.Product;
 
 public interface ProductService {
